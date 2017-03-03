@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>实现垂直水平居中</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+	/* 思路一 */
+	.test{
+		text-align:center;
+		height:40px;
+		line-height:40px;
+		width:600px;
+		background:#eee;
+	}
+	/* 思路二 （1） */
+	.parent{
+	    display: table-cell;
+	    text-align: center;
+	    vertical-align: middle;
+	    width:200px;
+	    height:100px;
+	    background:#555;
+    }
+	.child{
+   		display: inline-block;
+   		background:#ddd;
+	}
+	/* 思路二 （2） */
+	.parentImg{
+	    text-align: center;
+	    line-height: 100px;
+	    font-size: 0;
+    }
+	.childImg{
+    	vertical-align: middle;
+    }
+    /* 思路三 */
+    .parent{
+	    display:table-cell;
+	    vertical-align: middle;
+    }
+	.child{
+	    display: table;
+	    margin: 0 auto;
+    }
+    /* 思路四（1） */
+    .parent{
+	    position: relative;
+    }
+	.child{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    height: 50px;
+	    width: 80px;
+	    margin: auto;
+    }
+    /* 思路四（2） */
+    .parent{
+    	position: relative;
+    }
+	.child{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+    }
+    /* 思路四（3） */
+    .parent{
+    	position: relative;
+   	}
+	.child{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    width: 80px;
+	    height: 60px;
+	    margin-left: -40px;
+	    margin-top: -30px;
+    }
+    /* 思路五 （1）*/
+    .parent{
+    	display: flex;
+    	width:200px; 
+    	height:100px; 
+    }
+	.child{
+	    margin: auto;
+    }
+    /* 思路五 （2）*/
+    .parent{
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    width:200px; 
+	    height:100px; 
+    }
+	</style>
+  </head>
+  
+  <body>
+    <div class="test">text-align + line-height实现单行文本垂直水平居中</div>
+    
+   <div class="parent">
+   		<div class="child">测试文字</div>
+   </div> 
+  </body>
+</html>

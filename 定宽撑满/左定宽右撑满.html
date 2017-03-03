@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>左定宽右撑满.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <style>
+    body,div{
+    	margin:0;
+    	padding:0px;
+    }
+    /* 方法一 */
+    .left{
+    	width:300px;
+    	height:100px;
+    	float:left;
+    	background:#578;
+    }
+    .right{
+    	width:auto;
+    	height:100px;
+    	margin-left:300px;
+    	background:#f00;
+    }
+    /* 方法二 */
+    .wrap{
+    	position:relative;
+    }
+    .wrap_left{
+    	position:absolute;
+		width:200px;
+    	height:100px;
+    	background:#f00;
+    }
+    .wrap_right{
+   		height:100px;
+    	margin-left:200px;
+    	background:#4d4;
+    }
+    /* 方法三 */
+    .wp{
+    	float:left;
+    	width:100%;
+    	backgrpound:#ff0;
+    }
+    .wp_left{
+    	float:left;
+		width:200px;
+    	height:100px;
+    	margin-left:-100%;
+    	background:#369;
+    }
+    .wp_right{
+   		height:100px;
+    	margin-left:200px;
+    	background:#eee;
+    }
+    /* 方法五 */
+    .BFC_left{
+    	width:300px;
+    	height:100px;
+    	float:left;
+    	background:#578;
+    }
+    .BFC_right{
+    	height:100px;
+    	overflow:hidden;
+    	background:#f00;
+    }
+    /* 方法六 */
+    .flex_wrap{
+    	display:flex;
+    }
+    .flex_left{
+		width:200px;
+    	height:100px;
+    	background:#369;
+    }
+    .flex_right{
+   		height:100px;
+    	flex-grow:1;
+    	background:#eee;
+    }
+    </style>
+  </head> 
+  <body>
+  	<div class="flex_wrap">
+  		<div class="flex_left"></div>
+  		<div class="flex_right"></div>
+  	</div>
+  	<!-- <div class="BFC_left">bfc left</div>
+    <div class="BFC_right">bfc right</div>
+    
+  	<div class="wp">
+  		<div class="wp_right">我是右侧栏</div>
+  	</div>
+  	<div class="wp_left">我是左侧栏</div>
+  	<div class="wrap">
+  		<div class="wrap_left"></div>
+  		<div class="wrap_right"></div>
+  	</div>
+  
+  
+    <div>
+	    <div class="left"></div>
+	    <div class="right"></div>
+    </div> -->
+  </body>
+</html>
