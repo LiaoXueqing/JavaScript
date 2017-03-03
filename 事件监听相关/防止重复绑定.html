@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>重复绑定事件的解决方案</title>
+    <meta charset="UTF-8">
+  </head>
+  
+  <body>
+    <input type="button" id="btn1" value="btn1">
+    <input type="button" id="btn2" value="btn2">
+    <input type="button" id="btn3" value="btn3">
+    <ul id="testClick">
+    	<li>111</li>
+    	<li>222</li>
+    	<li>333</li>
+    	<li>444</li>
+    </ul>
+    <script src="jquery.js"></script>
+    <script>
+    	$("#btn1").unbind("click").bind("click",function(){
+    		alert("我是btn1！");
+    	});
+    	$("#btn1").unbind().click(function(){
+    		alert("我是btn1！");
+    	});
+    	$("#btn2").die().live("click",function() {
+            alert("我是btn2！");
+        });
+        $("#btn3").off("click").on("click",function(){
+    		alert("我是btn3！");
+    	});
+	</script>
+  </body>
+</html>
